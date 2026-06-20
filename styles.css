@@ -972,12 +972,18 @@ footer strong {
   justify-items: end;
 }
 
+.site-audio-rate-controls {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
 .site-audio-time-controls button {
-  min-width: 48px;
+  min-width: 38px;
   min-height: 30px;
   border: 1px solid rgba(255, 157, 0, 0.72);
   border-radius: 4px;
-  padding: 3px 9px;
+  padding: 3px 7px;
   color: #ffb13d;
   background: rgba(255, 122, 0, 0.08);
   font-family: "Barlow Condensed", sans-serif;
@@ -986,6 +992,10 @@ footer strong {
   line-height: 1;
   cursor: pointer;
   transition: color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+}
+
+.site-audio-rate-controls button:last-child {
+  min-width: 48px;
 }
 
 .site-audio-time-controls button:hover,

@@ -23,7 +23,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;700;800;900&family=Orbitron:wght@700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=20260619-audio3">
+    <link rel="stylesheet" href="styles.css?v=20260620-speed">
   </head>
   <body>
     <canvas id="emberField" class="ember-field" aria-hidden="true"></canvas>
@@ -259,7 +259,10 @@
         <div class="site-audio-timeline">
           <input id="siteAudioProgress" type="range" min="0" max="0" value="0" step="0.1" aria-label="Progresso do áudio">
           <div class="site-audio-time-controls">
-            <button id="siteAudioRate" type="button" aria-label="Ativar velocidade 2x" aria-pressed="false">2×</button>
+            <div class="site-audio-rate-controls" aria-label="Velocidade do áudio">
+              <button id="siteAudioRate15" type="button" aria-label="Ativar velocidade 1,5x" aria-pressed="false" title="Velocidade 1,5x">▶</button>
+              <button id="siteAudioRate20" type="button" aria-label="Ativar velocidade 2x" aria-pressed="false" title="Velocidade 2x">▶▶</button>
+            </div>
             <time id="siteAudioRemaining" aria-label="Tempo restante">--:--</time>
           </div>
         </div>
@@ -499,7 +502,7 @@
     </dialog>
 
     <script src="site-config.js?v=20260619-firebase-ponto"></script>
-    <script src="script.js?v=20260619-domingo12h"></script>
+    <script src="script.js?v=20260620-speed"></script>
     <script type="module" src="news.js?v=20260619-firebase-ponto"></script>
     <script src="https://primusdf.com.br/analytics/track.js" data-site-id="ponto-sem-filtro" data-site-name="Ponto Sem Filtro" defer></script>
 </body>

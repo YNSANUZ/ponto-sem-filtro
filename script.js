@@ -40,7 +40,8 @@ const siteAudio = document.getElementById("siteAudio");
 const siteAudioToggle = document.getElementById("siteAudioToggle");
 const siteAudioProgress = document.getElementById("siteAudioProgress");
 const siteAudioRemaining = document.getElementById("siteAudioRemaining");
-const siteAudioRate = document.getElementById("siteAudioRate");
+const siteAudioRate15 = document.getElementById("siteAudioRate15");
+const siteAudioRate20 = document.getElementById("siteAudioRate20");
 const countdownNodes = {
   days: document.getElementById("countDays"),
   hours: document.getElementById("countHours"),
@@ -225,7 +226,7 @@ initMetrics();
 initAdminPanel();
 
 function initSiteAudioPlayer() {
-  if (!siteAudio || !siteAudioToggle || !siteAudioProgress || !siteAudioRemaining || !siteAudioRate) return;
+  if (!siteAudio || !siteAudioToggle || !siteAudioProgress || !siteAudioRemaining || !siteAudioRate15 || !siteAudioRate20) return;
 
   const playerShell = siteAudio.closest(".site-audio-player");
 
@@ -271,16 +272,27 @@ function initSiteAudioPlayer() {
     updateAudioPlayer();
   });
 
-  siteAudioRate.addEventListener("click", () => {
-    const isDoubleSpeed = siteAudio.playbackRate === 2;
-    siteAudio.playbackRate = isDoubleSpeed ? 1 : 2;
-    siteAudioRate.setAttribute("aria-pressed", String(!isDoubleSpeed));
-    siteAudioRate.setAttribute("aria-label", isDoubleSpeed ? "Ativar velocidade 2x" : "Voltar à velocidade normal");
-  });
+  function syncAudioRateButtons() {
+    const isRate15 = siteAudio.playbackRate === 1.5;
+    const isRate20 = siteAudio.playbackRate === 2;
+    siteAudioRate15.setAttribute("aria-pressed", String(isRate15));
+    siteAudioRate20.setAttribute("aria-pressed", String(isRate20));
+    siteAudioRate15.setAttribute("aria-label", isRate15 ? "Voltar à velocidade normal" : "Ativar velocidade 1,5x");
+    siteAudioRate20.setAttribute("aria-label", isRate20 ? "Voltar à velocidade normal" : "Ativar velocidade 2x");
+  }
+
+  function toggleAudioRate(rate) {
+    siteAudio.playbackRate = siteAudio.playbackRate === rate ? 1 : rate;
+    syncAudioRateButtons();
+  }
+
+  siteAudioRate15.addEventListener("click", () => toggleAudioRate(1.5));
+  siteAudioRate20.addEventListener("click", () => toggleAudioRate(2));
 
   siteAudio.addEventListener("loadedmetadata", updateAudioPlayer);
   siteAudio.addEventListener("durationchange", updateAudioPlayer);
   siteAudio.addEventListener("timeupdate", updateAudioPlayer);
+  siteAudio.addEventListener("ratechange", syncAudioRateButtons);
   siteAudio.addEventListener("play", () => {
     setClockSound(false);
     setAudioPlaying(true);
@@ -292,6 +304,7 @@ function initSiteAudioPlayer() {
   });
 
   updateAudioPlayer();
+  syncAudioRateButtons();
 }
 
 function initEmberField() {

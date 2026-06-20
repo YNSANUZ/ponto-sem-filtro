@@ -1,0 +1,506 @@
+﻿<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ponto Sem Filtro</title>
+    <meta name="description" content="O objetivo não é impor verdades. É provocar reflexão.">
+    <meta name="theme-color" content="#050302">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Ponto Sem Filtro">
+    <meta property="og:title" content="Ponto Sem Filtro">
+    <meta property="og:description" content="O objetivo não é impor verdades. É provocar reflexão.">
+    <meta property="og:image" content="https://i.ibb.co/pGvNNYx/Chat-GPT-Image-24-de-mai-de-2026-23-12-54.png">
+    <meta property="og:image:secure_url" content="https://i.ibb.co/pGvNNYx/Chat-GPT-Image-24-de-mai-de-2026-23-12-54.png">
+    <meta property="og:image:alt" content="Logo do Ponto Sem Filtro em fundo preto">
+    <meta property="og:url" content="https://www.pontosemfiltro.com.br/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ponto Sem Filtro">
+    <meta name="twitter:description" content="O objetivo não é impor verdades. É provocar reflexão.">
+    <meta name="twitter:image" content="https://i.ibb.co/pGvNNYx/Chat-GPT-Image-24-de-mai-de-2026-23-12-54.png">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;700;800;900&family=Orbitron:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=20260619-audio3">
+  </head>
+  <body>
+    <canvas id="emberField" class="ember-field" aria-hidden="true"></canvas>
+    <div class="light-rig" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <section class="site-masthead" aria-label="Apresentacao do canal">
+      <a class="masthead-logo" href="#inicio" aria-label="Ponto Sem Filtro TalkCast">
+        <img src="assets/logo-ponto-sem-filtro-header.png" alt="Ponto Sem Filtro TalkCast">
+      </a>
+      <div class="masthead-copy">
+        <p class="eyebrow">Ponto Sem Filtro</p>
+        <h1>Com Tiago Salomão</h1>
+        <p>Opinião, análise e conversa real sobre o que importa.</p>
+        <div class="masthead-actions">
+          <a class="bio-action secondary" href="#noticias">Notícias</a>
+          <a class="bio-action" href="bio.html">Bio</a>
+        </div>
+      </div>
+    </section>
+
+    <header class="topbar">
+      <div class="top-links" aria-label="Links rápidos">
+        <a href="#inicio">Início</a>
+        <a href="#episodios">Episódios</a>
+        <a href="#noticias">Notícias</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#redes">Redes</a>
+        <a href="bio.html">Bio</a>
+      </div>
+      <a class="brand" href="#inicio" aria-label="Ponto Sem Filtro TalkCast">
+        <img src="assets/logo-ponto-sem-filtro-header.png" alt="Ponto Sem Filtro TalkCast">
+      </a>
+      <nav aria-label="Navegação principal">
+        <a href="#inicio">Início</a>
+        <a href="#episodios">Episódios</a>
+        <a href="#noticias">Notícias</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#redes">Redes</a>
+        <a href="bio.html">Bio</a>
+      </nav>
+      <a class="subscribe" data-youtube-link target="_blank" rel="noreferrer">
+        <span>▶</span>
+        Inscreva-se
+      </a>
+      <div class="top-social" aria-label="Redes sociais no cabeçalho">
+        <a href="#redes" aria-label="YouTube" title="YouTube">▶</a>
+        <a href="#redes" aria-label="Instagram" title="Instagram">◎</a>
+        <a href="#redes" aria-label="TikTok" title="TikTok">♪</a>
+        <a href="#redes" aria-label="WhatsApp" title="WhatsApp">☎</a>
+      </div>
+      <a class="top-countdown" href="#inicio" aria-label="Contagem regressiva para a estreia">
+        <img class="countdown-logo" src="assets/logo-ponto-sem-filtro-led.png" alt="">
+        <strong id="barTime">00:00:00:00</strong>
+        <span>para a estreia, não perca</span>
+      </a>
+      <button id="muteClock" class="mute-clock" type="button" aria-label="Ligar som do relógio" aria-pressed="false">SOM</button>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio" aria-label="Abertura do Ponto Sem Filtro TalkCast">
+        <img class="hero-bg" src="assets/banner-principal-ponto-sem-filtro.png" alt="Tiago Salomão no estúdio do Ponto Sem Filtro">
+        <div class="hero-shade"></div>
+        <div class="scan-line" aria-hidden="true"></div>
+        <div class="hero-content">
+          <h1 class="sr-only">Ponto Sem Filtro TalkCast: opinião com responsabilidade e análise com profundidade</h1>
+          <div class="hero-statement">
+            <p class="eyebrow">Ponto Sem Filtro</p>
+            <h2>Conversa direta, inteligente e sem roteiro ensaiado.</h2>
+            <p>Sociedade, comportamento, política, empreendedorismo, relacionamentos, liberdade e tudo o que impacta a vida real.</p>
+          </div>
+          <div class="hero-actions">
+            <a class="primary-action" href="#episodios"><span>▶</span> Assistir episódios</a>
+            <a class="ghost-action" href="#noticias">Ler notícias</a>
+            <a class="ghost-action" data-youtube-link target="_blank" rel="noreferrer">Canal no YouTube</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="ticker" aria-label="Princípios do canal">
+        <span>Sem gritaria</span>
+        <span>Análise com profundidade</span>
+        <span>Conversa que vai além</span>
+        <span>Respeito ao que importa</span>
+      </section>
+
+      <section class="episodes" id="episodios">
+        <div class="section-heading">
+          <p class="eyebrow">galeria de vídeos</p>
+          <h2>Assista direto do site.</h2>
+          <p>Quando o primeiro episódio for publicado no canal, ele aparece automaticamente aqui como destaque e também na galeria.</p>
+        </div>
+
+        <div class="video-stage">
+          <div class="video-player">
+            <iframe
+              id="episodePlayer"
+              title="Player de episódios Ponto Sem Filtro TalkCast"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <aside class="video-info">
+            <p class="eyebrow">em destaque</p>
+            <h3 id="featuredTitle">Carregando episódio...</h3>
+            <p>Escolha qualquer card da galeria para trocar o vídeo sem sair da página.</p>
+            <a class="ghost-action" id="featuredYoutube" target="_blank" rel="noreferrer">Abrir no YouTube</a>
+          </aside>
+        </div>
+
+        <div class="gallery-tools" aria-label="Filtros de vídeos">
+          <label for="videoSearch">Buscar vídeo</label>
+          <input id="videoSearch" type="search" placeholder="Digite um tema, convidado ou palavra do título">
+          <span id="videoCount"></span>
+        </div>
+
+        <div class="video-gallery" id="videoGallery" aria-live="polite"></div>
+      </section>
+
+      <section class="news" id="noticias">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">notícias</p>
+            <h2>Atualizações sem filtro.</h2>
+          </div>
+          <p>Textos, imagens e áudios publicados pela equipe do Ponto Sem Filtro aparecem aqui em destaque.</p>
+        </div>
+
+        <div id="newsFeature" class="news-feature" aria-live="polite">
+          <div class="empty-gallery news-empty">
+            <strong>Nenhuma notícia publicada ainda.</strong>
+            <span>Assim que a primeira publicação for liberada, ela aparece aqui automaticamente.</span>
+          </div>
+        </div>
+
+        <div id="newsGrid" class="news-grid" aria-live="polite"></div>
+
+        <div class="news-actions">
+          <button id="newsToggle" class="ghost-action" type="button" hidden>Ver todas</button>
+        </div>
+      </section>
+
+      <section class="about" id="sobre">
+        <div class="about-media">
+          <img src="assets/tiago-salomao-bw.png" alt="Tiago Salomão no estúdio do Ponto Sem Filtro">
+        </div>
+        <div class="about-copy">
+          <p class="eyebrow">quem é Tiago Salomão</p>
+          <h2>Gestor de TI, comunicador e criador do Ponto Sem Filtro.</h2>
+          <p>Tiago conduz análises e conversas sobre temas sensíveis de forma direta, respeitosa e sem extremismo. A proposta do projeto é trazer opinião, reflexão e debate sem transformar tudo em gritaria de internet.</p>
+          <div class="stat-row">
+            <span><strong>TI</strong> gestão e visão prática</span>
+            <span><strong>voz</strong> opinião com responsabilidade</span>
+            <span><strong>debate</strong> sem extremismo</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="quote-band">
+        <blockquote>
+          <span class="quote-mark">“</span>
+          <strong>O objetivo não é impor verdades.</strong>
+          <em>É provocar reflexão.</em>
+        </blockquote>
+      </section>
+
+      <section class="channel-story">
+        <div class="story-copy">
+          <p class="eyebrow">descrição do canal</p>
+          <h2>Conversas reais, opiniões fortes e reflexões sem filtro.</h2>
+          <p>Aqui a conversa é direta, inteligente e sem roteiro ensaiado. Falamos sobre sociedade, comportamento, política, empreendedorismo, relacionamentos, liberdade, opinião e tudo o que impacta a vida real.</p>
+          <p>Sem gritaria, sem personagem e sem medo de dizer o que precisa ser dito.</p>
+        </div>
+        <div class="story-media">
+          <img src="assets/imagem-ponto-sem-filtro-estudio.png" alt="Identidade visual do Ponto Sem Filtro no estúdio">
+        </div>
+      </section>
+
+      <section class="quote-band quote-band-split">
+        <blockquote>
+          <span class="quote-mark">“</span>
+          <strong>Sem gritaria.</strong>
+          <strong>Sem militância.</strong>
+          <em>Sem roteiro.</em>
+        </blockquote>
+        <blockquote>
+          <span class="quote-mark">“</span>
+          <strong>Pensar além da superfície</strong>
+          <em>ainda importa.</em>
+        </blockquote>
+      </section>
+
+      <section class="social" id="redes">
+        <div class="section-heading compact">
+          <p class="eyebrow">redes sociais</p>
+          <h2>Todos os caminhos do Ponto Sem Filtro.</h2>
+        </div>
+        <div class="social-grid">
+          <a data-youtube-link target="_blank" rel="noreferrer" aria-label="YouTube"><img src="assets/social-youtube.png" alt=""></a>
+          <a href="#" aria-label="Instagram"><img src="assets/social-instagram.png" alt=""></a>
+          <a href="#" aria-label="TikTok"><img src="assets/social-tiktok.png" alt=""></a>
+          <a href="#" aria-label="Kwai"><img src="assets/social-kwai.png" alt=""></a>
+          <a href="#" aria-label="X"><img src="assets/social-x.png" alt=""></a>
+          <a href="#" aria-label="Facebook"><img src="assets/social-facebook.png" alt=""></a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <strong>Ponto Sem Filtro TalkCast</strong>
+      <span>Opinião com responsabilidade. Análise com profundidade.</span>
+      <div class="footer-actions">
+        <a class="primus-credit" href="https://primusdf.com.br" target="_blank" rel="noreferrer">by primusdf © 2027</a>
+        <button id="adminEnter" class="admin-enter" type="button">Entrar</button>
+      </div>
+    </footer>
+
+    <aside class="site-audio-player" aria-label="Player de áudio: O que é o Ponto Sem Filtro?">
+      <audio id="siteAudio" preload="metadata" src="assets/ponto-sem-filtro-0617.mp3"></audio>
+      <button id="siteAudioToggle" class="site-audio-toggle" type="button" aria-label="Reproduzir áudio">
+        <svg class="audio-icon audio-icon-play" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M8 5v14l11-7z"></path>
+        </svg>
+        <svg class="audio-icon audio-icon-pause" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7 5h4v14H7zm6 0h4v14h-4z"></path>
+        </svg>
+      </button>
+      <div class="site-audio-content">
+        <strong>O que é o Ponto Sem Filtro?</strong>
+        <div class="site-audio-timeline">
+          <input id="siteAudioProgress" type="range" min="0" max="0" value="0" step="0.1" aria-label="Progresso do áudio">
+          <div class="site-audio-time-controls">
+            <button id="siteAudioRate" type="button" aria-label="Ativar velocidade 2x" aria-pressed="false">2×</button>
+            <time id="siteAudioRemaining" aria-label="Tempo restante">--:--</time>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <dialog id="newsReader" class="news-reader">
+      <article class="news-reader-shell">
+        <button id="newsReaderClose" class="admin-close" type="button" aria-label="Fechar">x</button>
+        <p id="newsReaderMeta" class="eyebrow"></p>
+        <h2 id="newsReaderTitle"></h2>
+        <img id="newsReaderImage" alt="">
+        <audio id="newsReaderAudio" controls hidden></audio>
+        <div id="newsReaderBody" class="news-reader-body"></div>
+      </article>
+    </dialog>
+
+    <dialog id="adminPanel" class="admin-panel">
+      <form method="dialog" class="admin-shell">
+        <button class="admin-close" type="button" aria-label="Fechar">x</button>
+        <section id="metricsAdminView" class="admin-view news-metrics-view" hidden>
+        <div class="admin-dashboard" id="adminDashboard">
+          <div class="admin-heading">
+            <div>
+              <p class="eyebrow">painel admin</p>
+              <h2>Central de audiência</h2>
+              <p class="admin-subtitle">Visão detalhada de tráfego, retenção, origem, localização e comportamento dentro do site.</p>
+            </div>
+            <div class="admin-actions" aria-label="Ações do painel">
+              <button type="button" id="adminRefresh">Atualizar</button>
+              <button type="button" id="adminExport">Exportar CSV</button>
+              <button type="button" id="adminClear">Limpar dados</button>
+            </div>
+          </div>
+
+          <div class="admin-tabs" aria-label="Período">
+            <button type="button" data-range="1">Hoje</button>
+            <button type="button" data-range="7">7 dias</button>
+            <button type="button" data-range="30">30 dias</button>
+            <button type="button" data-range="90">90 dias</button>
+            <button type="button" data-range="180">6 meses</button>
+          </div>
+
+          <div class="admin-status-strip">
+            <span><strong id="metricLastUpdate">Agora</strong> última atualização</span>
+            <span><strong id="metricPeakHour">--</strong> pico de acesso</span>
+            <span><strong id="metricMainSource">Direto</strong> principal origem</span>
+            <span><strong id="metricMainDevice">--</strong> dispositivo dominante</span>
+          </div>
+
+          <div class="admin-kpis">
+            <span><strong id="metricVisits">0</strong> visitas únicas</span>
+            <span><strong id="metricOnline">0</strong> online agora</span>
+            <span><strong id="metricTime">0s</strong> tempo médio</span>
+            <span><strong id="metricScroll">0%</strong> scroll médio</span>
+            <span><strong id="metricEngagedRate">0%</strong> sessões engajadas</span>
+            <span><strong id="metricReturnRate">0%</strong> taxa de retorno</span>
+            <span><strong id="metricInteractions">0</strong> interações</span>
+            <span><strong id="metricAvgInteractions">0</strong> média por sessão</span>
+            <span><strong id="metricCities">0</strong> cidades</span>
+            <span><strong id="metricCountries">0</strong> países</span>
+            <span><strong id="metricMobileRate">0%</strong> acesso mobile</span>
+            <span><strong id="metricDeepScroll">0%</strong> chegaram ao fim</span>
+          </div>
+
+          <div class="admin-section-title">
+            <h3>Tráfego e comportamento</h3>
+            <span id="metricPeriodSummary">Nenhum dado no período.</span>
+          </div>
+          <div class="admin-grid admin-grid-wide">
+            <div class="metric-card metric-large">
+              <div class="metric-card-head">
+                <h3>Acessos por hora</h3>
+                <span>0h até 23h</span>
+              </div>
+              <div id="hourChart" class="hour-chart"></div>
+            </div>
+            <div class="metric-card metric-large">
+              <div class="metric-card-head">
+                <h3>Acessos por dia</h3>
+                <span>volume no período</span>
+              </div>
+              <div id="dayChart" class="day-chart"></div>
+            </div>
+            <div class="metric-card">
+              <h3>Engajamento</h3>
+              <div id="engagementList" class="location-list"></div>
+            </div>
+          </div>
+
+          <div class="admin-section-title">
+            <h3>Audiência</h3>
+            <span>Localização, origem e tecnologia usada.</span>
+          </div>
+          <div class="admin-grid">
+            <div class="metric-card">
+              <h3>Mapa de acessos</h3>
+              <div id="accessMap" class="access-map"></div>
+            </div>
+            <div class="metric-card">
+              <h3>Locais</h3>
+              <div id="locationList" class="location-list"></div>
+            </div>
+            <div class="metric-card">
+              <h3>Origem dos acessos</h3>
+              <div id="sourceList" class="location-list"></div>
+            </div>
+            <div class="metric-card">
+              <h3>Dispositivos e navegadores</h3>
+              <div id="deviceList" class="location-list"></div>
+            </div>
+            <div class="metric-card">
+              <h3>Idiomas e telas</h3>
+              <div id="techList" class="location-list"></div>
+            </div>
+            <div class="metric-card">
+              <h3>Ações recentes</h3>
+              <div id="actionList" class="location-list"></div>
+            </div>
+          </div>
+
+          <div class="metric-card metric-wide">
+            <div class="metric-card-head">
+              <h3>Sessões recentes</h3>
+              <span id="metricSessionCount">0 registros</span>
+            </div>
+            <div class="session-table-head">
+              <span>Local</span>
+              <span>Origem</span>
+              <span>Dispositivo</span>
+              <span>Duração</span>
+              <span>Scroll</span>
+              <span>Ação</span>
+              <span>Atualizado</span>
+            </div>
+            <div id="sessionList" class="session-list"></div>
+          </div>
+        </div>
+        </section>
+
+        <section id="newsAdminView" class="admin-view news-admin-view">
+          <div class="admin-heading">
+            <div>
+              <p class="eyebrow">alimentação do site</p>
+              <h2>Publicações e notícias</h2>
+              <p class="admin-subtitle">Entre com Google para ver as métricas internas e publicar matérias no site.</p>
+            </div>
+            <div class="admin-actions">
+              <button id="newsGoogleLogin" type="button">Entrar com Google</button>
+              <button id="newsGoogleLogout" type="button" hidden>Sair</button>
+            </div>
+          </div>
+
+          <div id="newsAdminStatus" class="news-admin-status">Aguardando entrada com Google.</div>
+
+          <div id="newsAdminWorkspace" class="news-admin-workspace" hidden>
+            <div class="news-admin-account">
+              <span id="newsAdminAccount">Conta conectada</span>
+              <strong id="newsAdminRole">Autor Google</strong>
+            </div>
+
+            <div class="publisher-layout">
+              <div class="metric-card publisher-editor">
+                <div class="metric-card-head">
+                  <h3 id="newsEditorTitle">Nova publicação</h3>
+                  <span id="newsEditorState">Rascunho</span>
+                </div>
+
+                <div class="publisher-form">
+                  <label>Título
+                    <input id="newsTitle" type="text" maxlength="120" placeholder="Título da matéria">
+                  </label>
+                  <label>Slug
+                    <input id="newsSlug" type="text" maxlength="140" placeholder="gerado-automaticamente">
+                  </label>
+                  <label>Resumo
+                    <textarea id="newsSummary" rows="3" maxlength="260" placeholder="Chamada curta para os cards de notícia"></textarea>
+                  </label>
+                  <label>Categoria
+                    <input id="newsCategory" type="text" maxlength="40" value="Opinião">
+                  </label>
+                  <div class="publisher-media-grid">
+                    <label>Imagem de capa
+                      <input id="newsImageFile" type="file" accept="image/*">
+                    </label>
+                    <button id="newsUploadImage" type="button">Enviar imagem</button>
+                  </div>
+                  <label>URL da imagem
+                    <input id="newsImageUrl" type="url" placeholder="https://...">
+                  </label>
+                  <div id="newsImagePreview" class="news-image-preview">Preview da imagem</div>
+                  <label>Link do áudio
+                    <input id="newsAudioUrl" type="url" placeholder="https://...">
+                  </label>
+                  <label>Texto da matéria
+                    <textarea id="newsContent" rows="12" placeholder="Escreva o texto completo da notícia"></textarea>
+                  </label>
+                  <label>Status
+                    <select id="newsStatus">
+                      <option value="rascunho">Rascunho</option>
+                      <option value="publicado">Publicado</option>
+                    </select>
+                  </label>
+                </div>
+
+                <div class="admin-actions publisher-actions">
+                  <button id="newsSaveDraft" type="button">Salvar rascunho</button>
+                  <button id="newsPublish" type="button">Publicar</button>
+                  <button id="newsReset" type="button">Nova matéria</button>
+                  <button id="newsDelete" type="button" class="danger" hidden>Excluir</button>
+                </div>
+              </div>
+
+              <aside class="publisher-side">
+                <div id="moderatorAdminPanel" class="metric-card moderator-admin-panel" hidden>
+                  <h3>Moderadores</h3>
+                  <p>Somente ynsanuz@gmail.com e pontosemfiltro@gmail.com podem adicionar ou remover moderadores.</p>
+                  <div class="moderator-form">
+                    <input id="moderatorEmail" type="email" placeholder="email@dominio.com">
+                    <button id="moderatorAdd" type="button">Adicionar</button>
+                  </div>
+                  <div id="moderatorList" class="location-list"></div>
+                </div>
+
+                <div class="metric-card">
+                  <div class="metric-card-head">
+                    <h3>Publicações</h3>
+                    <span id="newsAdminCount">0 registros</span>
+                  </div>
+                  <div id="adminNewsList" class="admin-news-list"></div>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </section>
+      </form>
+    </dialog>
+
+    <script src="site-config.js?v=20260619-firebase-ponto"></script>
+    <script src="script.js?v=20260619-domingo12h"></script>
+    <script type="module" src="news.js?v=20260619-firebase-ponto"></script>
+    <script src="https://primusdf.com.br/analytics/track.js" data-site-id="ponto-sem-filtro" data-site-name="Ponto Sem Filtro" defer></script>
+</body>
+</html>

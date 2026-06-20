@@ -1,0 +1,115 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function userEmail() {
+      return signedIn() && request.auth.token.email != null
+        ? request.auth.token.email.lower()
+        : "";
+    }
+
+    // Administradores do NEXO Check-in.
+    function isMainAdmin() {
+      return userEmail() in [
+        "ynsanuz@gmail.com",
+        "primus.df@gmail.com"
+      ];
+    }
+
+    function isEventAdmin(eventId) {
+      return signedIn()
+        && (
+          userEmail() in get(/databases/$(database)/documents/eventos/$(eventId)).data.admins
+          || userEmail() in get(/databases/$(database)/documents/eventos/$(eventId)).data.moderators
+          || userEmail() in get(/databases/$(database)/documents/eventos/$(eventId)).data.members
+        );
+    }
+
+    // Administradores e moderadores do Ponto Sem Filtro.
+    function isPsfOwnerAdmin() {
+      return userEmail() in [
+        "ynsanuz@gmail.com",
+        "pontosemfiltro@gmail.com"
+      ];
+    }
+
+    function newsModeratorRef() {
+      return /databases/$(database)/documents/newsModerators/$(userEmail());
+    }
+
+    function isNewsModerator() {
+      return signedIn()
+        && exists(newsModeratorRef())
+        && get(newsModeratorRef()).data.active == true;
+    }
+
+    function canManageNews() {
+      return isPsfOwnerAdmin() || isNewsModerator();
+    }
+
+    function isPostOwner() {
+      return signedIn()
+        && (
+          resource.data.authorEmail == userEmail()
+          || resource.data.createdBy == userEmail()
+        );
+    }
+
+    function isCreatingOwnPost() {
+      return signedIn()
+        && request.resource.data.authorEmail == userEmail()
+        && request.resource.data.createdBy == userEmail();
+    }
+
+    // NEXO Check-in.
+    match /eventos/{eventId} {
+      allow read: if true;
+      allow create, update, delete: if isMainAdmin();
+
+      match /convidados/{convidadoId} {
+        allow read: if isMainAdmin() || isEventAdmin(eventId);
+
+        allow create: if get(/databases/$(database)/documents/eventos/$(eventId)).data.publicRegistration == true
+          || isMainAdmin()
+          || isEventAdmin(eventId);
+
+        allow update, delete: if isMainAdmin() || isEventAdmin(eventId);
+      }
+    }
+
+    // Ponto Sem Filtro.
+    match /noticias/{postId} {
+      allow read: if resource.data.status == "publicado"
+        || isPsfOwnerAdmin()
+        || isPostOwner();
+
+      allow create: if canManageNews()
+        && isCreatingOwnPost()
+        && request.resource.data.status in ["rascunho", "publicado"];
+
+      allow update: if canManageNews()
+        && (isPsfOwnerAdmin() || isPostOwner())
+        && request.resource.data.authorEmail == resource.data.authorEmail
+        && request.resource.data.status in ["rascunho", "publicado"];
+
+      allow delete: if canManageNews()
+        && (isPsfOwnerAdmin() || isPostOwner());
+    }
+
+    match /newsModerators/{email} {
+      allow get: if isPsfOwnerAdmin()
+        || (signedIn() && userEmail() == email);
+      allow list, create, update, delete: if isPsfOwnerAdmin();
+    }
+
+    // Bloqueia qualquer coleção não declarada acima.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

@@ -1,0 +1,80 @@
+﻿<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ponto Sem Filtro</title>
+    <meta name="description" content="O objetivo não é impor verdades. É provocar reflexão.">
+    <meta name="theme-color" content="#050302">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Ponto Sem Filtro">
+    <meta property="og:title" content="Ponto Sem Filtro">
+    <meta property="og:description" content="O objetivo não é impor verdades. É provocar reflexão.">
+    <meta property="og:image" content="https://i.ibb.co/pGvNNYx/Chat-GPT-Image-24-de-mai-de-2026-23-12-54.png">
+    <meta property="og:image:secure_url" content="https://i.ibb.co/pGvNNYx/Chat-GPT-Image-24-de-mai-de-2026-23-12-54.png">
+    <meta property="og:image:alt" content="Logo do Ponto Sem Filtro em fundo preto">
+    <meta property="og:url" content="https://www.pontosemfiltro.com.br/bio">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ponto Sem Filtro">
+    <meta name="twitter:description" content="O objetivo não é impor verdades. É provocar reflexão.">
+    <meta name="twitter:image" content="https://i.ibb.co/pGvNNYx/Chat-GPT-Image-24-de-mai-de-2026-23-12-54.png">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;700;800;900&family=Orbitron:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="bio.css">
+  </head>
+  <body>
+    <canvas id="bioEmbers" class="bio-embers" aria-hidden="true"></canvas>
+    <main class="bio-shell">
+      <section class="bio-card" aria-label="Bio Ponto Sem Filtro">
+        <div class="bio-countdown" aria-label="Contagem regressiva para a estreia">
+          <img src="assets/logo-ponto-sem-filtro-led.png" alt="">
+          <strong id="bioTime">00:00:00:00</strong>
+          <span>para a estreia</span>
+        </div>
+
+        <header class="bio-profile">
+          <img class="bio-avatar" src="assets/logo-ponto-sem-filtro-simbolo.png" alt="Ponto Sem Filtro">
+          <p class="bio-handle">@pontosemfiltro</p>
+          <h1>Ponto Sem Filtro</h1>
+          <p>Com Tiago Salomão. Conversas reais, opinião forte e reflexão sem gritaria.</p>
+        </header>
+
+        <section class="bio-featured" aria-label="Último vídeo">
+          <div class="bio-video-frame">
+            <iframe
+              id="bioPlayer"
+              title="Último vídeo do Ponto Sem Filtro"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="bio-video-copy">
+            <p>Último vídeo</p>
+            <h2 id="bioVideoTitle">Carregando vídeo...</h2>
+            <a id="bioYoutubeOpen" target="_blank" rel="noreferrer">Abrir no YouTube</a>
+          </div>
+        </section>
+
+        <button id="bioMoreVideos" class="bio-link-button" type="button" aria-expanded="false">Mais vídeos</button>
+        <div id="bioVideoList" class="bio-video-list" hidden></div>
+
+        <nav class="bio-links" aria-label="Redes sociais">
+          <a id="bioInstagram" target="_blank" rel="noreferrer" aria-label="Instagram"><img src="assets/social-instagram.png" alt=""></a>
+          <a id="bioYoutube" target="_blank" rel="noreferrer" aria-label="YouTube"><img src="assets/social-youtube.png" alt=""></a>
+          <a id="bioTiktok" target="_blank" rel="noreferrer" aria-label="TikTok"><img src="assets/social-tiktok.png" alt=""></a>
+          <a id="bioKwai" target="_blank" rel="noreferrer" aria-label="Kwai"><img src="assets/social-kwai.png" alt=""></a>
+          <a id="bioX" target="_blank" rel="noreferrer" aria-label="X / Twitter"><img src="assets/social-x.png" alt=""></a>
+          <a id="bioFacebook" target="_blank" rel="noreferrer" aria-label="Facebook"><img src="assets/social-facebook.png" alt=""></a>
+        </nav>
+
+        <a class="bio-site-link" href="index.html">Abrir site completo</a>
+      </section>
+    </main>
+
+    <script src="bio.js"></script>
+    <script src="https://primusdf.com.br/analytics/track.js" data-site-id="ponto-sem-filtro-bio" data-site-name="Bio do Tiago" defer></script>
+</body>
+</html>
